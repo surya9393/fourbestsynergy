@@ -36,4 +36,10 @@ class GajiController extends Controller
 
         return redirect('/gaji')->with('success', 'successfull');
     }
+
+    public function report(){
+        $auth = auth()->user()->nip;
+        $report = Rekapgaji::where('user_nip', $auth)->get();
+        return view('dashboard.karyawan.report')->with(compact('report'));
+    }
 }

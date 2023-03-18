@@ -10,8 +10,7 @@
                         <tr>
                             <th class="text-center">Name</th>
                             <th>Datang</th>
-                            <th>Pulang</th>
-                            <th>Status Datang</th>
+                            <th>Status</th>
                             <th>Gaji / Hari</th>
                         </tr>
                     </thead>
@@ -29,18 +28,17 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <p class="fw-normal mb-1">{{ $presensi->tanggaldatang }} {{ $presensi->jamdatang }}</p>
+                                    <p class="fw-normal mb-1">{{ $presensi->datang }}</p>
                                 </td>
-                                <td>{{ $presensi->jampulang }}</td>
                                 <td>
-                                    @if ($presensi->jamdatang >= '08:05:00')
+                                    @if ($presensi->datang >= '08:05:00')
                                         <span class="badge badge-danger rounded-pill d-inline">Telat Datang</span>
                                     @else
                                         <span class="badge badge-success rounded-pill d-inline">Tepat Waktu</span>
                                     @endif
                                 </td>
                                 <td>
-                                    @if ($presensi->jamdatang >= '08:05:00')
+                                    @if ($presensi->datang >= '08:05:00')
                                         {{ $gajitelat }}
                                     @else
                                         {{ $gajitepat }}

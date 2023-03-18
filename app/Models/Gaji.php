@@ -9,6 +9,8 @@ class Gaji extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'name',
+        'datang',
         'user_nip',
         'gaji'
     ];

@@ -38,7 +38,9 @@ class PresensiController extends Controller
         $hadir->save();
 
         $hadir = new Gaji;
+        $hadir->name = $request->name;
         $hadir->user_nip = $request->user_nip;
+        $hadir->datang = $jam;
         $hadir->gaji = $gaji;
         $hadir->save();
         return redirect('/presensi')->with('suksesPresensi', 'selamat');

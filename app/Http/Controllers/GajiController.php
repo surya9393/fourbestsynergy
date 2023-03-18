@@ -13,7 +13,7 @@ class GajiController extends Controller
         $gajitepat = 150000;
         $gajitelat = 100000;
         $auth = auth()->user()->nip;
-        $gajiPegawai = Presensi::where('user_nip', $auth)->orderBy('id', 'DESC')->get();
+        $gajiPegawai = Gaji::where('user_nip', $auth)->orderBy('id', 'DESC')->get();
         return view('dashboard.karyawan.gaji')->with(compact('gajiPegawai', 'gajitepat', 'gajitelat'));
     }
 
@@ -32,6 +32,8 @@ class GajiController extends Controller
         $gaji->gaji = $totalgaji;
         $gaji->save();
 
-        return redirect('/report')->with('success', 'successfull');
+        Gaji::query()->truncate();
+
+        return redirect('/gaji')->with('success', 'successfull');
     }
 }

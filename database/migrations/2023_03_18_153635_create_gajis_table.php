@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('gajis', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->time('datang');
             $table->integer('user_nip');
             $table->string('gaji');
             $table->timestamps();

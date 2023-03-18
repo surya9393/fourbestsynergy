@@ -3,6 +3,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-sm-12">
+                <a href="/rekapgaji" class="btn btn-success">Buat rekap gaji</a>
                 <table class="table align-middle mb-0 bg-white">
                     <h1 class="text-center">Daftar hadir</h1>
                     <thead class="bg-light">

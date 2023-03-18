@@ -37,3 +37,4 @@ Route::post('/presensiPulang', [PresensiController::class, 'pulang'])->name('pre
 
 
 Route::get('/gaji', [GajiController::class, 'index'])->name('gaji')->middleware('auth');
+Route::get('/rekapgaji', [GajiController::class, 'rekap'])->name('rekapgaji')->middleware('auth');
